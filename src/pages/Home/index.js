@@ -6,11 +6,15 @@ import {
   AddDeviceButtonText,
 } from './style';
 
-function Home() {
+function Home({navigation}) {
+
+  const navigateTo = (screenName) => {
+    navigation.navigate(screenName);
+  };
   return (
     <Container>
       <TitleText>AcquaCooler</TitleText>
-      <AddDeviceButton>
+      <AddDeviceButton onPress={() => navigateTo('Connection')}>
         <AddDeviceButtonText>+ Adicionar Dispositivo</AddDeviceButtonText>
       </AddDeviceButton>
     </Container>
