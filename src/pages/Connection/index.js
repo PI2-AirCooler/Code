@@ -2,7 +2,8 @@ import React from 'react';
 import ScreenTemplate from '../../components/ScreenTemplate';
 import {
   Container,
-  TextBody,
+  TextBodyMain,
+  TextBodyDescription
 } from './style';
 import Button from '../../components/Button';
 
@@ -15,9 +16,13 @@ function Connection({navigation}) {
       onPress={() => {}}
     >
       <Container>
-        <TextBody>
-          Teste
-        </TextBody>
+        <TextBodyMain>
+          Ligar o Bluetooth
+        </TextBodyMain>
+        <TextBodyDescription>
+          Necessário para conectar o seu celular
+          ao AcquaCooler
+        </TextBodyDescription>
       </Container>
     </ScreenTemplate>
   );

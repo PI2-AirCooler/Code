@@ -4,13 +4,18 @@ import normalize from 'react-native-normalize';
 export const Container = styled.View`
   flex: 1;
   width: 100%;
-  align-items: center;
-  justify-content: center;
-  /* background-color: #2D9CDB; */
+  padding: ${normalize(15)}px;
+  /* justify-content: center; */
 `;
 
-export const TextBody = styled.Text`
-  color: #000;
-  font-size: ${normalize(35)}px;
-  position: absolute;
+export const TextBodyMain = styled.Text`
+  color: #212121;
+  font-size: ${normalize(20)}px;
+  font-weight: bold;
+  margin-top: ${normalize(50)}px;
+`;
+
+export const TextBodyDescription = styled.Text`
+  color: #212121;
+  font-size: ${normalize(15)}px;
 `;
