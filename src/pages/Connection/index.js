@@ -4,10 +4,16 @@ import {
   Container,
   TextBody,
 } from './style';
+import Button from '../../components/Button';
 
-function Connection() {
+function Connection({navigation}) {
   return (
-    <ScreenTemplate MainText={"Conexão"}>
+    <ScreenTemplate 
+      MainText={"Conexão"}
+      buttonColor="#57B0E2"
+      buttonText="Concluído"
+      onPress={() => {}}
+    >
       <Container>
         <TextBody>
           Teste

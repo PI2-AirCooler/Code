@@ -4,13 +4,24 @@ import {
   Container,
   TitleText,
   HeaderContainer,
-  BodyContainer
+  BodyContainer,
+  FooterContainer
 } from './style';
+import Button from '../Button';
 
-function ScreenTemplate({MainText, children}) {
+function ScreenTemplate({
+  MainText,
+  children,
+  headerColor,
+  footerColor,
+  buttonColor,
+  buttonText,
+  onPress,
+  hasButton,
+}) {
   return (
     <Container>
-      <HeaderContainer>
+      <HeaderContainer color={headerColor}>
         <TitleText>
           {MainText}
         </TitleText>
@@ -18,6 +29,13 @@ function ScreenTemplate({MainText, children}) {
       <BodyContainer>
        {children}
       </BodyContainer>
+      <FooterContainer color={footerColor}>
+        <Button
+          buttonColor={buttonColor}
+          buttonText={buttonText}
+          onPress={onPress}
+        />
+      </FooterContainer>
     </Container>
   );
 }
