@@ -1,15 +1,10 @@
 import React from 'react';
-import {
-  View,
-  Text
-} from 'react-native';
+import Home from './pages/Home';
 
-const App = () => {
+function App() {
   return (
-    <View>
-      <Text>AcquaCooler</Text>
-    </View>
+    <Home />
   );
-};
+}
 
 export default App;
