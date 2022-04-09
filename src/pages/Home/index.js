@@ -4,7 +4,6 @@ import {
   TitleText
 } from './style';
 import ScreenTemplate from '../../components/ScreenTemplate';
-import Button from '../../components/Button';
 
 function Home({navigation}) {
 

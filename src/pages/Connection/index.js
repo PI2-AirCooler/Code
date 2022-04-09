@@ -8,12 +8,16 @@ import {
 import Button from '../../components/Button';
 
 function Connection({navigation}) {
+
+  const navigateTo = (screenName) => {
+    navigation.navigate(screenName);
+  };
   return (
     <ScreenTemplate 
       MainText={"Conexão"}
       buttonColor="#57B0E2"
       buttonText="Concluído"
-      onPress={() => {}}
+      onPress={() => navigateTo("Settings")}
     >
       <Container>
         <TextBodyMain>
