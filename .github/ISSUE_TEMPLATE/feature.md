@@ -2,7 +2,7 @@
 name: Feature
 about: Implementação de funcionalidade
 title: ''
-labels: ''
+labels: bug
 assignees: ''
 
 ---
