@@ -16,12 +16,14 @@ export const DescriptionText = styled.Text`
 `;
 
 export const InputContainer = styled.View`
+  flex-direction: row;
+  width: 100%;
   margin: ${normalize(10)}px;
   height: ${normalize(60)}px;
   border-radius: ${normalize(7)}px;
-  width: 100%;
   padding-left: ${normalize(15)}px;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center ;
   align-self: center;
   background-color: #E5E5E5;
 `;

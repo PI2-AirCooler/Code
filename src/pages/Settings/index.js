@@ -7,6 +7,7 @@ import {
   DataText,
   TemperatureButton,
 } from './style';
+import { Switch } from 'react-native';
 import ScreenTemplate from '../../components/ScreenTemplate';
 import normalize from 'react-native-normalize';
 import PickerTemperatureModal from '../../components/PickerTemperatureModal';
@@ -14,10 +15,16 @@ import PickerTemperatureModal from '../../components/PickerTemperatureModal';
 function Settings({navigation}) {
   const [modalVisible, setModalVisible] = useState(false);
   const [pickedValue, setPickedValue] = useState(2);
+  const [isEnabled, setIsEnabled] = useState(false);
 
   const navigateTo = (screenName) => {
     navigation.navigate(screenName);
   };
+
+  const toggleSwitch = () => {
+    setIsEnabled(previousState => !previousState);
+  };
+
   return (
     <ScreenTemplate
       MainText={"Configurações"}
@@ -38,8 +45,15 @@ function Settings({navigation}) {
         <DescriptionText>Notificações</DescriptionText>
         <InputContainer>
           <DataText>
-            Ativadas
+            {isEnabled ? 'Ativadas' : 'Desativadas'}
           </DataText>
+          <Switch
+            trackColor={{ false: "#767577", true: "#85c6ea" }}
+            thumbColor={isEnabled ? "#2D9CDB" : "#a3a2a4"}
+            ios_backgroundColor="#3e3e3e"
+            onValueChange={toggleSwitch}
+            value={isEnabled}
+          />
         </InputContainer>
         <DescriptionText>Temperatura Desejada</DescriptionText>
         <InputContainer>
