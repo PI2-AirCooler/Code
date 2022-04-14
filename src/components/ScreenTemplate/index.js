@@ -5,9 +5,14 @@ import {
   TitleText,
   HeaderContainer,
   BodyContainer,
-  FooterContainer
+  FooterContainer,
+  LeftButton,
+  BlankView,
+  TitleTextView,
 } from './style';
 import Button from '../Button';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+Icon.loadFont();
 
 function ScreenTemplate({
   MainText,
@@ -17,14 +22,30 @@ function ScreenTemplate({
   buttonColor,
   buttonText,
   onPress,
-  hasButton,
+  hasLeftButton = false,
+  blankViewColor = '#F2F2F2',
+  onBack
 }) {
   return (
     <Container>
       <HeaderContainer color={headerColor}>
-        <TitleText>
-          {MainText}
-        </TitleText>
+        {hasLeftButton ? (
+          <LeftButton onPress={onBack}>
+            <Icon name="arrow-back" size={30} color="#2D9CDB" />
+          </LeftButton>
+
+        ) : (
+          <BlankView color={blankViewColor}>
+          </BlankView>
+        )}
+        <TitleTextView>
+          <TitleText>
+            {MainText}
+          </TitleText>
+
+        </TitleTextView>
+        <BlankView color={blankViewColor}>
+        </BlankView>
       </HeaderContainer>
       <BodyContainer>
        {children}

@@ -23,6 +23,8 @@ function Settings({navigation}) {
       MainText={"Configurações"}
       buttonColor="#BC2A2A"
       buttonText="Desconectar"
+      hasLeftButton={true}
+      onBack={() => navigateTo('Home')}
       onPress={() => navigateTo('Connection')}
     >
       <Container>
