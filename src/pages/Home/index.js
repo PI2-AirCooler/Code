@@ -16,6 +16,7 @@ function Home({navigation}) {
       footerColor="#2D9CDB"
       buttonColor="#57B0E2"
       buttonText="+ Adicionar dispositivo"
+      blankViewColor="#2D9CDB"
       onPress={() => navigateTo('Connection')}
     >
       <Container>
