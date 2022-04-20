@@ -7,6 +7,7 @@ import {
   BodyContainer,
   FooterContainer,
   LeftButton,
+  RightButton,
   BlankView,
   TitleTextView,
 } from './style';
@@ -22,9 +23,15 @@ function ScreenTemplate({
   buttonColor,
   buttonText,
   onPress,
+  hasButton = true,
+  onPressRightButton,
   hasLeftButton = false,
-  blankViewColor = '#F2F2F2',
-  onBack
+  hasRightButton = false,
+  blankViewColor,
+  onBack,
+  MainTextColor,
+  RightButtonBackgroundColor,
+  RightButtonIconColor,
 }) {
   return (
     <Container>
@@ -39,23 +46,31 @@ function ScreenTemplate({
           </BlankView>
         )}
         <TitleTextView>
-          <TitleText>
+          <TitleText color={MainTextColor}>
             {MainText}
           </TitleText>
 
         </TitleTextView>
-        <BlankView color={blankViewColor}>
-        </BlankView>
+        {hasRightButton ? (
+          <RightButton onPress={onPressRightButton} color={RightButtonBackgroundColor}>
+            <Icon name="settings" size={30} color={RightButtonIconColor ? RightButtonIconColor : "#2D9CDB"}/>
+          </RightButton>
+        ) : (
+          <BlankView color={blankViewColor}>
+          </BlankView>
+        )}
       </HeaderContainer>
       <BodyContainer>
        {children}
       </BodyContainer>
       <FooterContainer color={footerColor}>
-        <Button
-          buttonColor={buttonColor}
-          buttonText={buttonText}
-          onPress={onPress}
-        />
+        {hasButton ? 
+        (<Button
+            buttonColor={buttonColor}
+            buttonText={buttonText}
+            onPress={onPress}
+          />
+        ) : null}
       </FooterContainer>
     </Container>
   );

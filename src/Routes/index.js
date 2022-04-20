@@ -4,6 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Home from '../pages/Home';
 import Connection from '../pages/Connection';
 import Settings from '../pages/Settings';
+import MainPage from '../pages/MainPage';
 
 export default function Routes() {
   const Stack = createNativeStackNavigator();
@@ -24,6 +25,11 @@ export default function Routes() {
         <Stack.Screen
           name="Settings"
           component={Settings}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="MainPage"
+          component={MainPage}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
