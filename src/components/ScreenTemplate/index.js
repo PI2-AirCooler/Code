@@ -40,17 +40,17 @@ function ScreenTemplate({
           <LeftButton onPress={onBack}>
             <Icon name="arrow-back" size={30} color="#2D9CDB" />
           </LeftButton>
-
         ) : (
           <BlankView color={blankViewColor}>
           </BlankView>
         )}
+
         <TitleTextView>
           <TitleText color={MainTextColor}>
             {MainText}
           </TitleText>
-
         </TitleTextView>
+
         {hasRightButton ? (
           <RightButton onPress={onPressRightButton} color={RightButtonBackgroundColor}>
             <Icon name="settings" size={30} color={RightButtonIconColor ? RightButtonIconColor : "#2D9CDB"}/>
@@ -60,6 +60,7 @@ function ScreenTemplate({
           </BlankView>
         )}
       </HeaderContainer>
+
       <BodyContainer>
        {children}
       </BodyContainer>

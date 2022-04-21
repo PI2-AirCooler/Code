@@ -37,7 +37,7 @@ export const BodyContainer = styled.View`
   flex: 1;
   width: 100%;
   align-items: center;
-  justify-content: center;
+  // justify-content: center;
   background-color: #F2F2F2;
 `;
 
