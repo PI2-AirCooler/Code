@@ -1,16 +1,14 @@
 import React from 'react';
 import { Image } from 'react-native'
 import {
-  Container,
   ImageContainer,
   InfosContainer,
   StatusConteiner,
-  RightButton,
-  InfosView,
   TextBodyDescription
 } from './style';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import ScreenTemplate from '../../components/ScreenTemplate'
+import AlertComponent from '../../components/Alert'
 Icon.loadFont();
 
 function MainPage({
@@ -39,25 +37,24 @@ function MainPage({
     >
       <StatusConteiner color={StatusBackgroundColor}>
         <ImageContainer color={StatusBackgroundColor}>
-          <Image source={require('../../../assets/cooler.png')}/> 
+          <Image 
+            source={require('../../../assets/cooler.png')} 
+            style={{height: 225, width: 225
+          }}/>
         </ImageContainer>
         <InfosContainer color={StatusBackgroundColor}>
-          <InfosView>
-            <TextBodyDescription>
-              Temperatura Atual: 
-            </TextBodyDescription>
-            <TextBodyDescription>
-              Status: 
-            </TextBodyDescription>
-            <TextBodyDescription>
-              Temperatura desejada: 
-            </TextBodyDescription>
-          </InfosView>
-          {/* <RightButton>
-            <Icon name="play-arrow" size={60} color={"#2D9CDB"}/>
-          </RightButton> */}
+          <TextBodyDescription>
+            Temperatura Atual: 
+          </TextBodyDescription>
+          <TextBodyDescription>
+            Status: 
+          </TextBodyDescription>
+          <TextBodyDescription>
+            Temperatura desejada: 
+          </TextBodyDescription>
         </InfosContainer>
       </StatusConteiner>
+      <AlertComponent></AlertComponent>
     </ScreenTemplate>
   );
 }

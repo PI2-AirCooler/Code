@@ -1,16 +1,9 @@
 import styled from 'styled-components/native';
 import normalize from 'react-native-normalize';
 
-export const Container = styled.View`
-  flex: 1;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-`;
-
 export const StatusConteiner = styled.View`
   width: 100%;
-  height: ${normalize(70)}%;
+  height: ${normalize(60)}%;
   align-items: center;
   borderBottomRightRadius: 25px;
   borderBottomLeftRadius: 25px;
@@ -19,37 +12,17 @@ export const StatusConteiner = styled.View`
 
 export const ImageContainer = styled.View`
   width: 100%;
-  height: ${normalize(68)}%;
+  height: ${normalize(58)}%;
   align-items: center;
   justify-content: center;
   background-color: ${(props) => props.color || "#14445F"};
 `;
 
 export const InfosContainer = styled.View`
-  margin-left: ${normalize(10)}px;
-  paddingLeft: ${normalize(10)}px;
+  paddingLeft: ${normalize(20)}px;
   width: 100%;
-  flex-direction: row;
-  height: ${normalize(20)}%;
-  align-items: center;
-  background-color: ${(props) => props.color || "#14445F"};
-`;
-
-export const RightButton = styled.TouchableOpacity`
-  width: 15%;
-  height: ${normalize(60)}%;
-  justify-content: center;
-  align: left;
-  align-items: center;
-  borderWidth:0.5px;
-  borderRadius:50px;
-  background-color: ${(props) => props.color || "#F2F2F2"};
-`;
-
-export const InfosView = styled.View`
-  width: 75%;
-  padding-left: ${normalize(10)}px;
-  height: ${normalize(100)}%;
+  height: ${normalize(30)}%;
+  align-items: flex-start;
   justify-content: space-around;
   background-color: ${(props) => props.color || "#14445F"};
 `;

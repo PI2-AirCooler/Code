@@ -25,7 +25,6 @@ export const TitleTextView = styled.View`
   background-color: ${(props) => props.color || "#000"};
 `;
 
-
 export const TitleText = styled.Text`
   color:${(props) => props.color || "#2D9CDB"};
   font-size: ${normalize(35)}px;
