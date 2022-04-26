@@ -12,12 +12,14 @@ export const StatusConteiner = styled.View`
   width: 100%;
   height: ${normalize(70)}%;
   align-items: center;
+  borderBottomRightRadius: 25px;
+  borderBottomLeftRadius: 25px;
   background-color: ${(props) => props.color || "#14445F"};
 `;
 
 export const ImageContainer = styled.View`
   width: 100%;
-  height: ${normalize(75)}%;
+  height: ${normalize(68)}%;
   align-items: center;
   justify-content: center;
   background-color: ${(props) => props.color || "#14445F"};
@@ -25,6 +27,7 @@ export const ImageContainer = styled.View`
 
 export const InfosContainer = styled.View`
   margin-left: ${normalize(10)}px;
+  paddingLeft: ${normalize(10)}px;
   width: 100%;
   flex-direction: row;
   height: ${normalize(20)}%;
@@ -38,13 +41,13 @@ export const RightButton = styled.TouchableOpacity`
   justify-content: center;
   align: left;
   align-items: center;
-  borderWidth:0.5;
-  borderRadius:50;
+  borderWidth:0.5px;
+  borderRadius:50px;
   background-color: ${(props) => props.color || "#F2F2F2"};
 `;
 
 export const InfosView = styled.View`
-  width: 80%;
+  width: 75%;
   padding-left: ${normalize(10)}px;
   height: ${normalize(80)}%;
   justify-content: space-around;
@@ -53,7 +56,6 @@ export const InfosView = styled.View`
 
 export const TextBodyDescription = styled.Text`
   color: #ffff;
-  align-text: left;
   font-size: ${normalize(15)}px;
   padding-right: 10px;
   `;

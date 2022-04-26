@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'react-native'
+import { Image } from 'react-native'
 import {
   Container,
   ImageContainer,
@@ -38,7 +38,7 @@ function MainPage({
     >
       <StatusConteiner color={StatusBackgroundColor}>
         <ImageContainer color={StatusBackgroundColor}>
-          {/* <Image source={require('./assets/cooler.png')}/>  */}
+          <Image source={require('../../../assets/cooler.png')}/> 
         </ImageContainer>
         <InfosContainer color={StatusBackgroundColor}>
           <InfosView>
