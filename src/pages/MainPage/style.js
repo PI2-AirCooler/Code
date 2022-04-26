@@ -49,7 +49,7 @@ export const RightButton = styled.TouchableOpacity`
 export const InfosView = styled.View`
   width: 75%;
   padding-left: ${normalize(10)}px;
-  height: ${normalize(80)}%;
+  height: ${normalize(100)}%;
   justify-content: space-around;
   background-color: ${(props) => props.color || "#14445F"};
 `;

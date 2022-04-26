@@ -33,8 +33,9 @@ function MainPage({
     hasRightButton={true}
     RightButtonIconColor={'#FFFFFF'}
     onPressRightButton= {() => navigateTo('Settings')}
-    hasButton={false}
-    // footerColor={'#141414'}
+    hasButton={true}
+    buttonText={"Iniciar"}
+    onPress={() => navigateTo('Settings')}
     >
       <StatusConteiner color={StatusBackgroundColor}>
         <ImageContainer color={StatusBackgroundColor}>
@@ -48,10 +49,13 @@ function MainPage({
             <TextBodyDescription>
               Status: 
             </TextBodyDescription>
+            <TextBodyDescription>
+              Temperatura desejada: 
+            </TextBodyDescription>
           </InfosView>
-          <RightButton>
+          {/* <RightButton>
             <Icon name="play-arrow" size={60} color={"#2D9CDB"}/>
-          </RightButton>
+          </RightButton> */}
         </InfosContainer>
       </StatusConteiner>
     </ScreenTemplate>
