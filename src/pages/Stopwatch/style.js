@@ -26,7 +26,7 @@ export const StopwatchView = styled.View`
     background-color: #f2f2f2;
     align-items: center;
     justify-content: space-evenly;
-    width: 40%;
+    width: 50%;
     margin-right: ${normalize(35)}px;
 `;
 
