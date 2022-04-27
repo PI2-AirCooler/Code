@@ -36,12 +36,20 @@ function Stopwatch({navigation}) {
   const navigateTo = (screenName) => {
     navigation.navigate(screenName);
   };
+
+  const handleStop = () => {
+    clearInterval(intervalRef.current)
+    setSeconds(0)
+    setTime("00:00")
+    navigateTo('MainPage')
+  };
+
   return (
     <ScreenTemplate 
       MainText={"Resfriando"}
       buttonColor="#BC2A2A"
       buttonText="Interromper"
-      onPress={() => {clearInterval(intervalRef.current)}}
+      onPress={() => {handleStop()}}
     >
       <Container>
           <StopwatchView>
