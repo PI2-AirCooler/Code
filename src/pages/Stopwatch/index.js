@@ -50,6 +50,8 @@ function Stopwatch({navigation}) {
       buttonColor="#BC2A2A"
       buttonText="Interromper"
       onPress={() => {handleStop()}}
+      hasLeftButton={true}
+      onBack={() => handleStop()}
     >
       <Container>
           <StopwatchView>
