@@ -13,9 +13,9 @@ import {
 } from './style';
 
 function Stopwatch({navigation}) {
-    // Inicia um valor pros segundos
-    const [seconds, setSeconds] = useState(10);
-    const intervalRef = useRef();
+  const [seconds, setSeconds] = useState(240);
+  const [time, setTime] = useState('04:00');
+  const intervalRef = useRef(); 
       
     useEffect(() => {
       intervalRef.current = setInterval(() => {
@@ -28,6 +28,9 @@ function Stopwatch({navigation}) {
       if (seconds <= 0) {
         clearInterval(intervalRef.current);
       }
+      let minutes = Math.floor(seconds / 60);
+      let secs = seconds % 60;
+      setTime(`${minutes < 10 ? '0' : ''}${minutes}:${secs < 10 ? '0' : ''}${secs}`);
     }, [seconds]);
     
   const navigateTo = (screenName) => {
@@ -44,9 +47,7 @@ function Stopwatch({navigation}) {
           <StopwatchView>
           <Icon name="alarm" size={normalize(35)} color={"#7c7c7c"}/>
             <StopwatchText>
-               {/* {${String(minutes).padStart(2, '0')} : ${String(seconds).padStart(2, '0')}} */}
-               {/* {${convert(seconds).minutes}} */}
-               {`${seconds}:${seconds}`}
+              {`${time}`}
             </StopwatchText>
           </StopwatchView>
         <TextView>
@@ -60,4 +61,4 @@ function Stopwatch({navigation}) {
   );
 }
 
-export default Stopwatch;
+export default Stopwatch
