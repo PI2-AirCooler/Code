@@ -16,7 +16,7 @@ function Settings({navigation}) {
   const [modalVisible, setModalVisible] = useState(false);
   const [pickedValue, setPickedValue] = useState(2);
   const [isEnabled, setIsEnabled] = useState(false);
-
+  
   const navigateTo = (screenName) => {
     navigation.navigate(screenName);
   };
@@ -31,7 +31,7 @@ function Settings({navigation}) {
       buttonColor="#BC2A2A"
       buttonText="Desconectar"
       hasLeftButton={true}
-      onBack={() => navigateTo('Home')}
+      onBack={() => navigateTo('MainPage')}
       onPress={() => navigateTo('Connection')}
     >
       <Container>
