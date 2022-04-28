@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Image } from 'react-native'
 import {
   ImageContainer,
@@ -8,14 +8,14 @@ import {
 } from './style';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import ScreenTemplate from '../../components/ScreenTemplate'
-import AlertComponent from '../../components/Alert'
+import AlertComponent from '../../components/Alert';
+import SocketContext from '../../context';
 Icon.loadFont();
 
 function MainPage({
   navigation, 
   StatusBackgroundColor
 }) {
-
   const navigateTo = (screenName) => {
     navigation.navigate(screenName)
   };  

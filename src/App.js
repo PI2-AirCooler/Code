@@ -1,6 +1,6 @@
 import React from 'react';
 import Routes from './Routes';
-import { SocketProvider } from '../context';
+import { SocketProvider } from './context';
 
 function App() {
   return (
