@@ -5,12 +5,12 @@ const SocketContext = createContext({});
 
 export const SocketProvider = ( { children } ) => {
   const [connected, setConnected] = useState(false);
-  const [temperature, setTemperature] = useState('X');
-  const [status, setStatus] = useState('Preparando...');
+  const [temperature, setTemperature] = useState('25');
+  const [status, setStatus] = useState('Preparando AcquaCooler');
+  const [wishTemp, setWishTemp] = useState(2);
   const [event, setEvent] = useState({});
   useEffect(() => {
-    // const socket = io("http://10.0.2.2:3333");
-    const socket = io("http://137.184.125.41:3333");
+    const socket = io("http://10.0.2.2:3333");
     socket.on("event", (data) => {
       if (data.hasOwnProperty("temperature")) {
         setTemperature(data.temperature);
@@ -24,7 +24,7 @@ export const SocketProvider = ( { children } ) => {
   }, []);
   
   return (
-    <SocketContext.Provider value={{connected, setConnected, temperature, status}}>
+    <SocketContext.Provider value={{connected, setConnected, temperature, status, wishTemp, setWishTemp}}>
       {children}
     </SocketContext.Provider>
   );

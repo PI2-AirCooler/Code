@@ -15,9 +15,9 @@ Icon.loadFont();
 function MainPage({
   navigation, 
 }) {
-  const { temperature, status } = useContext(SocketContext);
+  const { temperature, status, wishTemp } = useContext(SocketContext);
   const navigateTo = (screenName) => {
-    navigation.navigate(screenName)
+    navigation.navigate(screenName, )
   };  
 
   const getColor = () => {
@@ -75,13 +75,13 @@ function MainPage({
         </ImageContainer>
         <InfosContainer color={getColor}>
           <TextBodyDescription>
-            Temperatura Atual: {temperature}°C
+            Temperatura Atual: {temperature} °C
           </TextBodyDescription>
           <TextBodyDescription>
             Status: {status}
           </TextBodyDescription>
           <TextBodyDescription>
-            Temperatura desejada: 
+            Temperatura desejada: {wishTemp} °C
           </TextBodyDescription>
         </InfosContainer>
       </StatusConteiner>
