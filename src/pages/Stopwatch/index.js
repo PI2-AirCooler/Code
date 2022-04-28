@@ -12,26 +12,26 @@ import {
   StopwatchText
 } from './style';
 
-function Stopwatch({navigation}) {
-  const [seconds, setSeconds] = useState(240);
-  const [time, setTime] = useState('04:00');
+function Stopwatch({ navigation }) {
+  const [seconds, setSeconds] = useState(5);
+  const [time, setTime] = useState(0);
   const intervalRef = useRef(); 
       
-    useEffect(() => {
-      intervalRef.current = setInterval(() => {
-        setSeconds((t) => t - 1);
-      }, 1000);
-      return () => clearInterval(intervalRef.current);
-    }, []);
-    
-    useEffect(() => {
-      if (seconds <= 0) {
-        clearInterval(intervalRef.current);
-      }
-      let minutes = Math.floor(seconds / 60);
-      let secs = seconds % 60;
-      setTime(`${minutes < 10 ? '0' : ''}${minutes}:${secs < 10 ? '0' : ''}${secs}`);
-    }, [seconds]);
+  useEffect(() => {
+    intervalRef.current = setInterval(() => {
+      setSeconds((t) => t - 1);
+    }, 1000);
+    return () => clearInterval(intervalRef.current);
+  }, []);
+  
+  useEffect(() => {
+    if (seconds <= 0) {
+      handleStop();
+    }
+    let minutes = Math.floor(seconds / 60);
+    let secs = seconds % 60;
+    setTime(`${minutes < 10 ? '0' : ''}${minutes}:${secs < 10 ? '0' : ''}${secs}`);
+  }, [seconds]);
     
   const navigateTo = (screenName) => {
     navigation.navigate(screenName);

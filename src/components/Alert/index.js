@@ -22,13 +22,13 @@ function AlertComponent() {
                 </TextContainer>
             </TextView>
         </ListItemContainer>
-    )
+    );
 
   return (
     <AlertContainer>
         <FlatList
-        data={[1, 2, 3]}
-        renderItem={renderItem}
+            data={[1, 2, 3]}
+            renderItem={renderItem}
         />
     </AlertContainer>
   );
