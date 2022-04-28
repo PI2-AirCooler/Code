@@ -14,41 +14,71 @@ Icon.loadFont();
 
 function MainPage({
   navigation, 
-  StatusBackgroundColor
 }) {
-  const { temperature } = useContext(SocketContext);
+  const { temperature, status } = useContext(SocketContext);
   const navigateTo = (screenName) => {
     navigation.navigate(screenName)
   };  
 
+  const getColor = () => {
+    if (status.toLowerCase() === "pronto"){
+      return "#013A26"
+    } 
+    else if (status.toLowerCase() === "erro"){
+      return "#BC2A2A"
+    }
+    else {
+      return '#14445F'
+    }
+  }
+
+  const buttonAction = () => {
+    if (status.toLowerCase() !== "pronto"){
+        return () => {}
+    }
+    else{
+      return navigateTo('Stopwatch')
+    }
+  }
+
+  const getButtonColor = () => {
+    if (status.toLowerCase() !== "pronto"){
+      return "#CCC"
+    }
+    else {
+      return "#57B0E2"
+    }
+  }
+
   return (
     <ScreenTemplate
-    headerColor={'#14445F'}
+    headerColor={getColor}
+    buttonColor={getButtonColor}
     MainText='AcquaCooler'
     MainTextColor='#FFFFFF'
-    blankViewColor={'#14445F'}
-    RightButtonBackgroundColor={'#14445F'}
-    LeftButtonBackgroundColor={'#14445F'}
+    blankViewColor={getColor}
+    RightButtonBackgroundColor={getColor}
+    LeftButtonBackgroundColor={getColor}
     hasRightButton={true}
     RightButtonIconColor={'#FFFFFF'}
     onPressRightButton= {() => navigateTo('Settings')}
     hasButton={true}
     buttonText={"Iniciar"}
-    onPress={() => navigateTo('Stopwatch')}
+    onPress={buttonAction}
     >
-      <StatusConteiner color={StatusBackgroundColor}>
-        <ImageContainer color={StatusBackgroundColor}>
+      <StatusConteiner color={getColor}>
+        <ImageContainer color={getColor}>
           <Image 
             source={require('../../../assets/cooler.png')} 
             style={{height: 225, width: 225
           }}/>
         </ImageContainer>
-        <InfosContainer color={StatusBackgroundColor}>
+        <InfosContainer color={getColor}>
           <TextBodyDescription>
             Temperatura Atual: {temperature}°C
           </TextBodyDescription>
           <TextBodyDescription>
-            Status: 
+            Status: {status}
           </TextBodyDescription>
           <TextBodyDescription>
             Temperatura desejada: 
