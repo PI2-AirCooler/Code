@@ -17,7 +17,7 @@ function Connection({navigation}) {
       MainText={"Conexão"}
       buttonColor="#57B0E2"
       buttonText="Concluído"
-      onPress={() => navigateTo("MainPage")}
+      onPress={() => navigateTo("SearchDevices")}
     >
       <Container>
         <TextBodyMain>
