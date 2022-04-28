@@ -33,7 +33,7 @@ function MainPage({
     onPressRightButton= {() => navigateTo('Settings')}
     hasButton={true}
     buttonText={"Iniciar"}
-    onPress={() => navigateTo('Settings')}
+    onPress={() => navigateTo('Stopwatch')}
     >
       <StatusConteiner color={StatusBackgroundColor}>
         <ImageContainer color={StatusBackgroundColor}>

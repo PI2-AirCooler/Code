@@ -5,6 +5,7 @@ import Home from '../pages/Home';
 import Connection from '../pages/Connection';
 import Settings from '../pages/Settings';
 import MainPage from '../pages/MainPage';
+import Stopwatch from '../pages/Stopwatch'
 
 export default function Routes() {
   const Stack = createNativeStackNavigator();
@@ -30,6 +31,11 @@ export default function Routes() {
         <Stack.Screen
           name="MainPage"
           component={MainPage}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Stopwatch"
+          component={Stopwatch}
           options={{headerShown: false}}
         />
       </Stack.Navigator>
