@@ -16,6 +16,7 @@ function MainPage({
   navigation, 
   StatusBackgroundColor
 }) {
+  const { temperature } = useContext(SocketContext);
   const navigateTo = (screenName) => {
     navigation.navigate(screenName)
   };  
@@ -44,7 +45,7 @@ function MainPage({
         </ImageContainer>
         <InfosContainer color={StatusBackgroundColor}>
           <TextBodyDescription>
-            Temperatura Atual: 
+            Temperatura Atual: {temperature}°C
           </TextBodyDescription>
           <TextBodyDescription>
             Status: 
