@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import SocketContext from '../../context';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { FlatList } from 'react-native';
 import {
@@ -10,15 +11,16 @@ import {
 } from './style';
 
 function AlertComponent() {
+    const { alertList } = useContext(SocketContext);
 
-    const renderItem = () => (
+    const renderItem = ({item}) => (
         <ListItemContainer>
             <IconContainer>
                 <Icon name="report" size={30} color={"#7c7c7c"}/>
             </IconContainer>
             <TextView>
                 <TextContainer>
-                    Iniciando resfriamento até 2°C
+                    {item.message}
                 </TextContainer>
             </TextView>
         </ListItemContainer>
@@ -27,7 +29,7 @@ function AlertComponent() {
   return (
     <AlertContainer>
         <FlatList
-            data={[1, 2, 3]}
+            data={alertList}
             renderItem={renderItem}
         />
     </AlertContainer>

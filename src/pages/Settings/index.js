@@ -40,6 +40,7 @@ function Settings({navigation}) {
         <InputContainer>
           <NameInput 
             placeholder="Nome"
+            placeholderTextColor="#000"
             style={{fontSize: normalize(20)}}
           />
         </InputContainer>
