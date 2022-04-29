@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import normalize from 'react-native-normalize';
 import ScreenTemplate from '../../components/ScreenTemplate';
 import AlertComponent from '../../components/Alert'
 import Icon from 'react-native-vector-icons/MaterialIcons';
-
+import SocketContext from '../../context';
 import {
   Container,
   TextView,
@@ -14,6 +14,7 @@ import {
 
 function Stopwatch({ navigation }) {
   const [seconds, setSeconds] = useState(5);
+  const { alertList, setAlertList } = useContext(SocketContext)
   const [time, setTime] = useState(0);
   const intervalRef = useRef(); 
       
@@ -26,6 +27,8 @@ function Stopwatch({ navigation }) {
   
   useEffect(() => {
     if (seconds <= 0) {
+      let newAlert = {message: "Bebida resfriada!"}
+      setAlertList([newAlert, ...alertList])
       handleStop();
     }
     let minutes = Math.floor(seconds / 60);
