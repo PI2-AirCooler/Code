@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, { useState, useContext} from 'react';
+import SocketContext from '../../context';
 import {
   Container,
   DescriptionText,
@@ -13,8 +14,8 @@ import normalize from 'react-native-normalize';
 import PickerTemperatureModal from '../../components/PickerTemperatureModal';
 
 function Settings({navigation}) {
+  const { wishTemp, setWishTemp} = useContext(SocketContext);
   const [modalVisible, setModalVisible] = useState(false);
-  const [pickedValue, setPickedValue] = useState(2);
   const [isEnabled, setIsEnabled] = useState(false);
   
   const navigateTo = (screenName) => {
@@ -39,6 +40,7 @@ function Settings({navigation}) {
         <InputContainer>
           <NameInput 
             placeholder="Nome"
+            placeholderTextColor="#000"
             style={{fontSize: normalize(20)}}
           />
         </InputContainer>
@@ -58,15 +60,15 @@ function Settings({navigation}) {
         <DescriptionText>Temperatura Desejada</DescriptionText>
         <InputContainer>
           <TemperatureButton onPress={() => setModalVisible(!modalVisible)}>
-            <DataText>{pickedValue}°C</DataText>
+            <DataText>{wishTemp}°C</DataText>
           </TemperatureButton>
         </InputContainer>
       </Container>
       <PickerTemperatureModal 
         modalVisible={modalVisible}
         setModalVisible={setModalVisible}
-        pickedValue={pickedValue}
-        setPickedValue={setPickedValue}
+        pickedValue={wishTemp}
+        setPickedValue={setWishTemp}
       />
     </ScreenTemplate>
   );

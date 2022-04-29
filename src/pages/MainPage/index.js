@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Image } from 'react-native'
 import {
   ImageContainer,
@@ -8,49 +8,80 @@ import {
 } from './style';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import ScreenTemplate from '../../components/ScreenTemplate'
-import AlertComponent from '../../components/Alert'
+import AlertComponent from '../../components/Alert';
+import SocketContext from '../../context';
 Icon.loadFont();
 
 function MainPage({
   navigation, 
-  StatusBackgroundColor
 }) {
-
+  const { temperature, status, wishTemp } = useContext(SocketContext);
   const navigateTo = (screenName) => {
-    navigation.navigate(screenName)
+    navigation.navigate(screenName, )
   };  
+
+  const getColor = () => {
+    if (status.toLowerCase() === "pronto"){
+      return "#013A26"
+    } 
+    else if (status.toLowerCase() === "erro"){
+      return "#BC2A2A"
+    }
+    else {
+      return '#14445F'
+    }
+  }
+
+  const buttonAction = () => {
+    if (status.toLowerCase() !== "pronto"){
+        return () => {}
+    }
+    else{
+      return navigateTo('Stopwatch')
+    }
+  }
+
+  const getButtonColor = () => {
+    if (status.toLowerCase() !== "pronto"){
+      return "#CCC"
+    }
+    else {
+      return "#57B0E2"
+    }
+  }
 
   return (
     <ScreenTemplate
-    headerColor={'#14445F'}
+    headerColor={getColor}
+    buttonColor={getButtonColor}
     MainText='AcquaCooler'
     MainTextColor='#FFFFFF'
-    blankViewColor={'#14445F'}
-    RightButtonBackgroundColor={'#14445F'}
-    LeftButtonBackgroundColor={'#14445F'}
+    blankViewColor={getColor}
+    RightButtonBackgroundColor={getColor}
+    LeftButtonBackgroundColor={getColor}
     hasRightButton={true}
     RightButtonIconColor={'#FFFFFF'}
     onPressRightButton= {() => navigateTo('Settings')}
     hasButton={true}
     buttonText={"Iniciar"}
-    onPress={() => navigateTo('Stopwatch')}
+    onPress={buttonAction}
     >
-      <StatusConteiner color={StatusBackgroundColor}>
-        <ImageContainer color={StatusBackgroundColor}>
+      <StatusConteiner color={getColor}>
+        <ImageContainer color={getColor}>
           <Image 
             source={require('../../../assets/cooler.png')} 
             style={{height: 225, width: 225
           }}/>
         </ImageContainer>
-        <InfosContainer color={StatusBackgroundColor}>
+        <InfosContainer color={getColor}>
           <TextBodyDescription>
-            Temperatura Atual: 
+            Temperatura Atual: {temperature} °C
           </TextBodyDescription>
           <TextBodyDescription>
-            Status: 
+            Status: {status}
           </TextBodyDescription>
           <TextBodyDescription>
-            Temperatura desejada: 
+            Temperatura desejada: {wishTemp} °C
           </TextBodyDescription>
         </InfosContainer>
       </StatusConteiner>

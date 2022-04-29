@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import normalize from 'react-native-normalize';
 import ScreenTemplate from '../../components/ScreenTemplate';
 import AlertComponent from '../../components/Alert'
 import Icon from 'react-native-vector-icons/MaterialIcons';
-
+import SocketContext from '../../context';
 import {
   Container,
   TextView,
@@ -11,9 +11,11 @@ import {
   StopwatchView,
   StopwatchText
 } from './style';
+import PushNotification from "react-native-push-notification"; 
 
 function Stopwatch({ navigation }) {
   const [seconds, setSeconds] = useState(5);
+  const { alertList, setAlertList } = useContext(SocketContext)
   const [time, setTime] = useState(0);
   const intervalRef = useRef(); 
       
@@ -26,7 +28,20 @@ function Stopwatch({ navigation }) {
   
   useEffect(() => {
     if (seconds <= 0) {
+      let newAlert = {message: "Bebida resfriada!"};
+      setAlertList([newAlert, ...alertList]);
+      try {
+        let notificationConfig = {
+          channelId: "AcquaCoolerChannel",
+          title: "AcquaCooler",
+          message: newAlert.message,
+        }
+        PushNotification.localNotification(notificationConfig);
+      } catch(e){
+        console.log(e);
+      }
       handleStop();
+      
     }
     let minutes = Math.floor(seconds / 60);
     let secs = seconds % 60;
