@@ -1,5 +1,6 @@
 import React, { useState, useEffect, createContext } from 'react';
 import { io } from "socket.io-client";
+import PushNotification from "react-native-push-notification"; 
 
 const SocketContext = createContext({});
 
@@ -32,6 +33,14 @@ export const SocketProvider = ( { children } ) => {
     if (status.toLowerCase() === "erro"){
       let newAlert = {message: "ERRO: dispositivo em posição incorreta!"}
       setAlertList([newAlert, ...alertList])
+      let notificationConfig = {
+        channelId: "AcquaCoolerChannel",
+        title: "AcquaCooler",
+        message: newAlert.message,
+        data: {},
+        message: "Erro"
+      }
+      PushNotification.localNotification(notificationConfig) 
     }
     if (status.toLowerCase() === "pronto"){
       let newAlert = {message: "Dispositivo pronto! Insira sua bebida!"}
