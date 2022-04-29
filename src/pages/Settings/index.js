@@ -41,6 +41,7 @@ function Settings({navigation}) {
           <NameInput 
             placeholder="Nome"
             defaultValue={deviceInfo}
+            color="#000"
             placeholderTextColor="#a3a3a3"
             onValueChange={(value) => setDeviceInfo(value)}
             style={{fontSize: normalize(20)}}

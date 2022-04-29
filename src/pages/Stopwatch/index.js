@@ -35,6 +35,8 @@ function Stopwatch({ navigation }) {
           channelId: "AcquaCoolerChannel",
           title: "AcquaCooler",
           message: newAlert.message,
+          largeIcon: 'acqua_icon_s',
+          smallIcon: 'acqua_icon_s',
         }
         PushNotification.localNotification(notificationConfig);
       } catch(e){
