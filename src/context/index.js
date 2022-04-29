@@ -12,6 +12,10 @@ export const SocketProvider = ( { children } ) => {
   const [alertList, setAlertList] = useState([]);
   useEffect(() => {
     const socket = io("http://10.0.2.2:3333");
+    PushNotification.createChannel({
+      channelId: "AcquaCoolerChannel", // (required)
+      channelName: "AcquaCoolerChannel", // (required)
+    });
     socket.on("event", (data) => {
       if (data.hasOwnProperty("temperature")) {
         setTemperature(data.temperature);
@@ -30,21 +34,26 @@ export const SocketProvider = ( { children } ) => {
   }, [wishTemp]);
   
   useEffect(() => {
+    let newAlert;
     if (status.toLowerCase() === "erro"){
-      let newAlert = {message: "ERRO: dispositivo em posição incorreta!"}
+      newAlert = {message: "ERRO: dispositivo em posição incorreta!"}
       setAlertList([newAlert, ...alertList])
-      let notificationConfig = {
-        channelId: "AcquaCoolerChannel",
-        title: "AcquaCooler",
-        message: newAlert.message,
-        data: {},
-        message: "Erro"
-      }
-      PushNotification.localNotification(notificationConfig) 
     }
     if (status.toLowerCase() === "pronto"){
-      let newAlert = {message: "Dispositivo pronto! Insira sua bebida!"}
+      newAlert = {message: "Dispositivo pronto! Insira sua bebida!"}
       setAlertList([newAlert, ...alertList])
+    }
+    if (status.toLowerCase() === "erro" || status.toLowerCase() === "pronto") {
+      try {
+        let notificationConfig = {
+          channelId: "AcquaCoolerChannel",
+          title: "AcquaCooler",
+          message: newAlert.message,
+        }
+        PushNotification.localNotification(notificationConfig);
+      } catch(e){
+        console.log(e);
+      }
     }
   }, [status]);
 
