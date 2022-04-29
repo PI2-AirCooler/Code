@@ -14,9 +14,9 @@ import normalize from 'react-native-normalize';
 import PickerTemperatureModal from '../../components/PickerTemperatureModal';
 
 function Settings({navigation}) {
-  const { wishTemp, setWishTemp} = useContext(SocketContext);
+  const { wishTemp, setWishTemp, deviceInfo, setDeviceInfo } = useContext(SocketContext);
   const [modalVisible, setModalVisible] = useState(false);
-  const [isEnabled, setIsEnabled] = useState(false);
+  const [isEnabled, setIsEnabled] = useState(true);
   
   const navigateTo = (screenName) => {
     navigation.navigate(screenName);
@@ -40,7 +40,9 @@ function Settings({navigation}) {
         <InputContainer>
           <NameInput 
             placeholder="Nome"
-            placeholderTextColor="#000"
+            defaultValue={deviceInfo}
+            placeholderTextColor="#a3a3a3"
+            onValueChange={(value) => setDeviceInfo(value)}
             style={{fontSize: normalize(20)}}
           />
         </InputContainer>

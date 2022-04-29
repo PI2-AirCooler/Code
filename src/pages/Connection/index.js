@@ -1,13 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ScreenTemplate from '../../components/ScreenTemplate';
+import BleManager from "react-native-ble-manager";
 import {
   Container,
   TextBodyMain,
   TextBodyDescription
 } from './style';
-import Button from '../../components/Button';
 
 function Connection({navigation}) {
+  useEffect(() => {
+    BleManager.start({ showAlert: false }).then(() => {
+      // Success code
+      console.log("Module initialized");
+    });
+    BleManager.enableBluetooth()
+    .then(() => {
+      // Success code
+      console.log("The bluetooth is already enabled or the user confirm");
+      // navigateTo('SearchDevices');
+    })
+    .catch((error) => {
+      // Failure code
+      console.log("The user refuse to enable bluetooth");
+    });
+  }, []);
 
   const navigateTo = (screenName) => {
     navigation.navigate(screenName);

@@ -1,9 +1,9 @@
 import React from 'react';
+import ScreenTemplate from '../../components/ScreenTemplate';
 import {
   Container,
   TitleText
 } from './style';
-import ScreenTemplate from '../../components/ScreenTemplate';
 
 function Home({navigation}) {
 

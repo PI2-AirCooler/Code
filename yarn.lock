@@ -6271,6 +6271,11 @@
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   "version" "16.13.1"
 
+"react-native-ble-manager@^8.0.2":
+  "integrity" "sha512-SCtuLFkBwKyPY0er3uKPcZaWUdSjJ3koDUlBvO/nS/WPbBBa2CJn+at/IXPolnxlV++jZqrOGV2qmENrq7ppZA=="
+  "resolved" "https://registry.npmjs.org/react-native-ble-manager/-/react-native-ble-manager-8.0.2.tgz"
+  "version" "8.0.2"
+
 "react-native-codegen@*":
   "integrity" "sha512-i3TtOB7IWIhaKZCg7EMBcXmNtaxEMFyzGQ4Zf6ZR1esj6gs36OWpYj357nSqeqzPKUqb8P1pUvmhoLIK4uVNeQ=="
   "resolved" "https://registry.npmjs.org/react-native-codegen/-/react-native-codegen-0.0.14.tgz"

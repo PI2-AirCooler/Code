@@ -1,6 +1,9 @@
-import React from 'react';
-import { Image, FlatList } from 'react-native';
+import React, { useState, useEffect, useContext } from 'react';
+import { io } from "socket.io-client";
+import { Image, FlatList, ActivityIndicator } from 'react-native';
 import ScreenTemplate from '../../components/ScreenTemplate';
+import SocketContext from '../../context';
+import normalize from 'react-native-normalize';
 import {
   Container,
   ListItemContainer,
@@ -8,27 +11,52 @@ import {
   TextView,
   TextContainer
 } from './style';
-import normalize from 'react-native-normalize';
 
 function SearchDevices({navigation}) {
-
+  const { deviceInfo } = useContext(SocketContext);
+  const [isLoading, setIsLoading] = useState(true);
   const navigateTo = (screenName) => {
     navigation.navigate(screenName);
   };
-
+  const { 
+    setTemperature,
+    setStatus,
+    setConnected,
+  } = useContext(SocketContext);
+  
   const devicesList = [
     {
-      id: 'IDDDFRI123-2',
-      deviceName: 'AcquaCooler-VVV',
-    },
-    {
-      id: 'IDDDFRI123-3',
-      deviceName: 'AcquaCooler-VVV2',
-    },
-  ]
+      deviceName: deviceInfo,
+    }
+  ];
+
+  useEffect(() => {
+    async function sleep () {
+      await new Promise(resolve => setTimeout(resolve, 10000));
+    };
+    sleep();
+    setIsLoading(false);
+  }, []);
+
+  handleNextPage = () => {
+    const socket = io("http://137.184.125.41:3333");
+    
+    socket.on("event", (data) => {
+      if (data.hasOwnProperty("temperature")) {
+        setTemperature(data.temperature);
+      }
+      if (data.hasOwnProperty("status")){
+        setStatus(data.status);
+      }
+      console.log(data);
+    });
+    console.log('SocketProvider');
+    setConnected(true);
+    // navigateTo('MainPage');
+  };
 
   const renderItem = ({ item }) => (
-    <ListItemContainer onPress={() => navigateTo('MainPage')}>
+    <ListItemContainer onPress={handleNextPage}>
         <ImageContainer>
           <Image 
             source={require('../../../assets/cooler.png')} 
@@ -51,10 +79,14 @@ function SearchDevices({navigation}) {
       onPress={() => {}}
     >
       <Container>
-        <FlatList
-            data={devicesList}
-            renderItem={renderItem}
-        />
+        {isLoading ? (
+          <ActivityIndicator/>
+        ) : (
+          <FlatList
+              data={devicesList}
+              renderItem={renderItem}
+          />
+        )}
       </Container>
     </ScreenTemplate>
   );

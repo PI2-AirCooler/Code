@@ -4,6 +4,7 @@ import ScreenTemplate from '../../components/ScreenTemplate';
 import AlertComponent from '../../components/Alert'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import SocketContext from '../../context';
+import PushNotification from "react-native-push-notification"; 
 import {
   Container,
   TextView,
@@ -11,7 +12,6 @@ import {
   StopwatchView,
   StopwatchText
 } from './style';
-import PushNotification from "react-native-push-notification"; 
 
 function Stopwatch({ navigation }) {
   const [seconds, setSeconds] = useState(5);
