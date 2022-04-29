@@ -11,7 +11,7 @@ export const SocketProvider = ( { children } ) => {
   const [wishTemp, setWishTemp] = useState(2);
   const [alertList, setAlertList] = useState([]);
   useEffect(() => {
-    const socket = io("http://10.0.2.2:3333");
+    const socket = io("http://137.184.125.41:3333");
     PushNotification.createChannel({
       channelId: "AcquaCoolerChannel", // (required)
       channelName: "AcquaCoolerChannel", // (required)
