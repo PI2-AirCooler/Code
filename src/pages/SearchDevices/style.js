@@ -23,6 +23,7 @@ export const TextContainer = styled.Text`
     font-size: ${normalize(15)}px; 
     align-self: center;
     color: #7c7c7c;
+    margin-left: 10px;
 `;
 
 export const ImageContainer = styled.View` 

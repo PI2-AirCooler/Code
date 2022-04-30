@@ -1,5 +1,5 @@
 import React, { useState, useEffect, createContext } from 'react';
-import { io } from "socket.io-client";
+
 import PushNotification from "react-native-push-notification"; 
 
 const SocketContext = createContext({});
@@ -10,23 +10,15 @@ export const SocketProvider = ( { children } ) => {
   const [status, setStatus] = useState('Preparando AcquaCooler');
   const [wishTemp, setWishTemp] = useState(2);
   const [alertList, setAlertList] = useState([]);
+  const [deviceInfo, setDeviceInfo] = useState('AcquaCooler-VVV');
+
   useEffect(() => {
-    const socket = io("http://137.184.125.41:3333");
     PushNotification.createChannel({
       channelId: "AcquaCoolerChannel", // (required)
       channelName: "AcquaCoolerChannel", // (required)
     });
-    socket.on("event", (data) => {
-      if (data.hasOwnProperty("temperature")) {
-        setTemperature(data.temperature);
-      }
-      if (data.hasOwnProperty("status")){
-        setStatus(data.status);
-      }
-      console.log(data);
-    });
-    console.log('SocketProvider');
   }, []);
+
 
   useEffect(() => {
     let newAlert = {message: `Iniciando resfriamento até ${wishTemp} °C`}
@@ -49,6 +41,8 @@ export const SocketProvider = ( { children } ) => {
           channelId: "AcquaCoolerChannel",
           title: "AcquaCooler",
           message: newAlert.message,
+          largeIcon: 'acqua_icon_s',
+          smallIcon: 'acqua_icon_s',
         }
         PushNotification.localNotification(notificationConfig);
       } catch(e){
@@ -58,7 +52,20 @@ export const SocketProvider = ( { children } ) => {
   }, [status]);
 
   return (
-    <SocketContext.Provider value={{connected, setConnected, temperature, status, wishTemp, setWishTemp, alertList, setAlertList}}>
+    <SocketContext.Provider value={{
+      connected,
+      setConnected,
+      temperature,
+      setTemperature,
+      status,
+      setStatus,
+      wishTemp,
+      setWishTemp,
+      alertList,
+      setAlertList,
+      deviceInfo,
+      setDeviceInfo,
+    }}>
       {children}
     </SocketContext.Provider>
   );

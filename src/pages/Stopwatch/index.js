@@ -4,6 +4,7 @@ import ScreenTemplate from '../../components/ScreenTemplate';
 import AlertComponent from '../../components/Alert'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import SocketContext from '../../context';
+import PushNotification from "react-native-push-notification"; 
 import {
   Container,
   TextView,
@@ -11,7 +12,6 @@ import {
   StopwatchView,
   StopwatchText
 } from './style';
-import PushNotification from "react-native-push-notification"; 
 
 function Stopwatch({ navigation }) {
   const [seconds, setSeconds] = useState(5);
@@ -35,6 +35,8 @@ function Stopwatch({ navigation }) {
           channelId: "AcquaCoolerChannel",
           title: "AcquaCooler",
           message: newAlert.message,
+          largeIcon: 'acqua_icon_s',
+          smallIcon: 'acqua_icon_s',
         }
         PushNotification.localNotification(notificationConfig);
       } catch(e){

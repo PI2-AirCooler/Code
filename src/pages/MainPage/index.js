@@ -1,21 +1,26 @@
 import React, { useContext } from 'react';
 import { Image } from 'react-native'
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import ScreenTemplate from '../../components/ScreenTemplate'
+import AlertComponent from '../../components/Alert';
+import SocketContext from '../../context';
 import {
   ImageContainer,
   InfosContainer,
   StatusConteiner,
   TextBodyDescription
 } from './style';
-import Icon from 'react-native-vector-icons/MaterialIcons';
-import ScreenTemplate from '../../components/ScreenTemplate'
-import AlertComponent from '../../components/Alert';
-import SocketContext from '../../context';
 Icon.loadFont();
 
 function MainPage({
   navigation, 
 }) {
-  const { temperature, status, wishTemp } = useContext(SocketContext);
+  const { 
+    temperature,
+    status,
+    wishTemp
+  } = useContext(SocketContext);
+  
   const navigateTo = (screenName) => {
     navigation.navigate(screenName, )
   };  
