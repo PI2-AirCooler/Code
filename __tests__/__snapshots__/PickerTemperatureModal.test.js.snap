@@ -1,0 +1,538 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PickerTemperatureModal renders correctly 1`] = `
+<Modal
+  animationType="slide"
+  hardwareAccelerated={false}
+  onRequestClose={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "justifyContent": "center",
+    }
+  }
+  transparent={true}
+  visible={true}
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "alignSelf": "center",
+          "backgroundColor": "'rgba(0,0,0,0.8)'",
+          "borderRadius": 14,
+          "height": "100%",
+          "justifyContent": "center",
+          "justifySelf": "center",
+          "width": "100%",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#FFF",
+            "borderRadius": 14,
+            "height": "50%",
+            "justifyContent": "center",
+            "width": "90%",
+          },
+        ]
+      }
+    >
+      <View
+        style={
+          Object {
+            "height": "90%",
+            "width": "90%",
+          }
+        }
+      >
+        <RCTScrollView
+          ItemSeparatorComponent={[Function]}
+          data={
+            Array [
+              Object {
+                "label": "2°C",
+                "value": 2,
+              },
+              Object {
+                "label": "3°C",
+                "value": 3,
+              },
+              Object {
+                "label": "4°C",
+                "value": 4,
+              },
+              Object {
+                "label": "5°C",
+                "value": 5,
+              },
+              Object {
+                "label": "6°C",
+                "value": 6,
+              },
+              Object {
+                "label": "7°C",
+                "value": 7,
+              },
+              Object {
+                "label": "8°C",
+                "value": 8,
+              },
+              Object {
+                "label": "9°C",
+                "value": 9,
+              },
+              Object {
+                "label": "10°C",
+                "value": 10,
+              },
+              Object {
+                "label": "11°C",
+                "value": 11,
+              },
+              Object {
+                "label": "12°C",
+                "value": 12,
+              },
+              Object {
+                "label": "13°C",
+                "value": 13,
+              },
+              Object {
+                "label": "14°C",
+                "value": 14,
+              },
+              Object {
+                "label": "15°C",
+                "value": 15,
+              },
+              Object {
+                "label": "16°C",
+                "value": 16,
+              },
+              Object {
+                "label": "17°C",
+                "value": 17,
+              },
+              Object {
+                "label": "18°C",
+                "value": 18,
+              },
+              Object {
+                "label": "19°C",
+                "value": 19,
+              },
+              Object {
+                "label": "20°C",
+                "value": 20,
+              },
+              Object {
+                "label": "21°C",
+                "value": 21,
+              },
+              Object {
+                "label": "22°C",
+                "value": 22,
+              },
+              Object {
+                "label": "23°C",
+                "value": 23,
+              },
+              Object {
+                "label": "24°C",
+                "value": 24,
+              },
+              Object {
+                "label": "25°C",
+                "value": 25,
+              },
+              Object {
+                "label": "26°C",
+                "value": 26,
+              },
+              Object {
+                "label": "27°C",
+                "value": 27,
+              },
+              Object {
+                "label": "28°C",
+                "value": 28,
+              },
+              Object {
+                "label": "29°C",
+                "value": 29,
+              },
+              Object {
+                "label": "30°C",
+                "value": 30,
+              },
+            ]
+          }
+          getItem={[Function]}
+          getItemCount={[Function]}
+          getItemLayout={[Function]}
+          initialScrollIndex={-3}
+          keyExtractor={[Function]}
+          onContentSizeChange={[Function]}
+          onLayout={[Function]}
+          onMomentumScrollBegin={[Function]}
+          onMomentumScrollEnd={[Function]}
+          onScroll={[Function]}
+          onScrollBeginDrag={[Function]}
+          onScrollEndDrag={[Function]}
+          removeClippedSubviews={false}
+          renderItem={[Function]}
+          scrollEventThrottle={50}
+          stickyHeaderIndices={Array []}
+          viewabilityConfigCallbackPairs={Array []}
+        >
+          <View>
+            <View
+              style={null}
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "height": 39,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "paddingBottom": 8,
+                    "paddingTop": 6,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#212121",
+                      "fontSize": 17,
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  2°C
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#E5E5E5",
+                    "height": 0.8,
+                    "width": "100%",
+                  }
+                }
+              />
+            </View>
+            <View
+              style={null}
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "height": 39,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "paddingBottom": 8,
+                    "paddingTop": 6,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#212121",
+                      "fontSize": 17,
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  3°C
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#E5E5E5",
+                    "height": 0.8,
+                    "width": "100%",
+                  }
+                }
+              />
+            </View>
+            <View
+              style={null}
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "height": 39,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "paddingBottom": 8,
+                    "paddingTop": 6,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#212121",
+                      "fontSize": 17,
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  4°C
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#E5E5E5",
+                    "height": 0.8,
+                    "width": "100%",
+                  }
+                }
+              />
+            </View>
+            <View
+              style={null}
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "height": 39,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "paddingBottom": 8,
+                    "paddingTop": 6,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#212121",
+                      "fontSize": 17,
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  5°C
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#E5E5E5",
+                    "height": 0.8,
+                    "width": "100%",
+                  }
+                }
+              />
+            </View>
+            <View
+              style={null}
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "height": 39,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "paddingBottom": 8,
+                    "paddingTop": 6,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#212121",
+                      "fontSize": 17,
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  6°C
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#E5E5E5",
+                    "height": 0.8,
+                    "width": "100%",
+                  }
+                }
+              />
+            </View>
+            <View
+              style={null}
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "height": 39,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "paddingBottom": 8,
+                    "paddingTop": 6,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#212121",
+                      "fontSize": 17,
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  7°C
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#E5E5E5",
+                    "height": 0.8,
+                    "width": "100%",
+                  }
+                }
+              />
+            </View>
+            <View
+              style={null}
+            >
+              <View
+                accessible={true}
+                collapsable={false}
+                focusable={true}
+                onClick={[Function]}
+                onResponderGrant={[Function]}
+                onResponderMove={[Function]}
+                onResponderRelease={[Function]}
+                onResponderTerminate={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "height": 39,
+                    "justifyContent": "center",
+                    "opacity": 1,
+                    "paddingBottom": 8,
+                    "paddingTop": 6,
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "color": "#212121",
+                      "fontSize": 17,
+                      "textAlign": "center",
+                    }
+                  }
+                >
+                  8°C
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#E5E5E5",
+                    "height": 0.8,
+                    "width": "100%",
+                  }
+                }
+              />
+            </View>
+            <View
+              style={
+                Object {
+                  "height": 875.5999999999999,
+                }
+              }
+            />
+          </View>
+        </RCTScrollView>
+      </View>
+    </View>
+  </View>
+</Modal>
+`;
